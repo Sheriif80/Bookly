@@ -13,10 +13,9 @@ class BooksListviewItem extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             borderRadius: .circular(16),
-            color: Colors.amber,
             image: const DecorationImage(
               fit: BoxFit.fill,
-              image: AssetImage(AssetsData.testBook2),
+              image: AssetImage(AssetsData.testBook3),
             ),
           ),
         ),
