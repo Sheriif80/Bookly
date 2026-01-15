@@ -1,7 +1,11 @@
+import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/assets_data.dart';
+import 'package:bookly/features/home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
+import 'package:get/route_manager.dart';
+import 'package:get/utils.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -21,6 +25,8 @@ class _SplashViewBodyState extends State<SplashViewBody>
     super.initState();
 
     initSlidingAnimation();
+
+    naviagteToHome();
   }
 
   @override
@@ -56,5 +62,17 @@ class _SplashViewBodyState extends State<SplashViewBody>
       end: Offset.zero,
     ).animate(animationController);
     animationController.forward();
+  }
+
+  void naviagteToHome() {
+    Future.delayed(const Duration(seconds: 2), () {
+      Get.to(
+        () {
+          return const HomeView();
+        },
+        transition: .fadeIn,
+        duration: kNavigationDuration,
+      );
+    });
   }
 }
