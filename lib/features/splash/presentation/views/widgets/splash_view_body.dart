@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:get/route_manager.dart';
-import 'package:get/utils.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SplashViewBody extends StatefulWidget {
