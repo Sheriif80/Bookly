@@ -6,8 +6,8 @@ class BooksListviewItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.25,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10),
       child: AspectRatio(
         aspectRatio: 0.66,
         child: Container(
@@ -15,6 +15,7 @@ class BooksListviewItem extends StatelessWidget {
             borderRadius: .circular(16),
             color: Colors.amber,
             image: const DecorationImage(
+              fit: BoxFit.fill,
               image: AssetImage(AssetsData.testBook),
             ),
           ),
