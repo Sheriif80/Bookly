@@ -18,9 +18,9 @@ class HomeViewBody extends StatelessWidget {
         Gap(52),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 10),
-          child: Text('Best Seller', style: Styles.titleMedium),
+          child: Text('Best Seller', style: Styles.headerMedium),
         ),
-        Gap(30),
+        Gap(25),
         BestsellerListviewBook(),
       ],
     );

@@ -38,12 +38,10 @@ class _SplashViewBodyState extends State<SplashViewBody>
         const Gap(18),
         SlideTransition(
           position: slidingAnimation,
-          child: Text(
+          child: const Text(
             'Enjoy Reading',
             textAlign: TextAlign.center,
-            style: GoogleFonts.inter(
-              textStyle: const TextStyle(fontSize: 17, fontWeight: .w500),
-            ),
+            style: TextStyle(fontSize: 17, fontWeight: .w700),
           ),
         ),
       ],
