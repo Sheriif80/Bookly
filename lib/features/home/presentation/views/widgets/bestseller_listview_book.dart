@@ -9,45 +9,48 @@ class BestsellerListviewBook extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 110,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        child: Row(
-          children: [
-            AspectRatio(
-              aspectRatio: 0.66,
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: .circular(10),
-                  color: Colors.amber,
-                  image: const DecorationImage(
-                    fit: BoxFit.fill,
-                    image: AssetImage(AssetsData.testBook3),
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      child: SizedBox(
+        height: 110,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: Row(
+            children: [
+              AspectRatio(
+                aspectRatio: 0.66,
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: .circular(10),
+                    color: Colors.amber,
+                    image: const DecorationImage(
+                      fit: BoxFit.fill,
+                      image: AssetImage(AssetsData.testBook3),
+                    ),
                   ),
                 ),
               ),
-            ),
-            const Gap(30),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.5,
-              child: Column(
-                crossAxisAlignment: .start,
-                children: [
-                  const Text(
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    'Harry Potter and the Goblet of Fire',
-                    style: Styles.bookTitle,
-                  ),
-                  const Gap(5),
-                  const Text('J.K. Rowling', style: Styles.textSmall),
-                  const Gap(5),
-                  const BookRating(),
-                ],
+              const Gap(30),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.5,
+                child: const Column(
+                  crossAxisAlignment: .start,
+                  children: [
+                    Text(
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      'Harry Potter and the Goblet of Fire',
+                      style: Styles.bookTitle,
+                    ),
+                    Gap(5),
+                    Text('J.K. Rowling', style: Styles.textSmall),
+                    Gap(5),
+                    BookRating(),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
