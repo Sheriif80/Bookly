@@ -2,7 +2,6 @@ import 'package:bookly/core/utils/assets_data.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 
 class BestsellerListviewBook extends StatelessWidget {
@@ -44,18 +43,7 @@ class BestsellerListviewBook extends StatelessWidget {
                   const Gap(5),
                   const Text('J.K. Rowling', style: Styles.textSmall),
                   const Gap(5),
-                  Expanded(
-                    child: Row(
-                      children: [
-                        Text(
-                          '19.99 €',
-                          style: Styles.textSmall.copyWith(fontWeight: .bold),
-                        ),
-                        const Spacer(),
-                        const BookRating(),
-                      ],
-                    ),
-                  ),
+                  const BookRating(),
                 ],
               ),
             ),

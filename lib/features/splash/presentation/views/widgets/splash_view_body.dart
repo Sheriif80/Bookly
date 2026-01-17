@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:get/route_manager.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -26,6 +25,12 @@ class _SplashViewBodyState extends State<SplashViewBody>
     initSlidingAnimation();
 
     naviagteToHome();
+  }
+
+  @override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
   }
 
   @override
