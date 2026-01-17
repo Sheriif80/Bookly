@@ -44,6 +44,7 @@ abstract class Styles {
   // CAPTIONS (Grey text usually)
   static TextStyle caption = TextStyle(
     fontSize: 14,
-    color: Colors.grey.shade400,
+    color: Colors.grey.shade500,
+    fontWeight: .w600,
   );
 }

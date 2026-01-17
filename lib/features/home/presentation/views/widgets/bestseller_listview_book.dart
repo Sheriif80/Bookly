@@ -39,19 +39,32 @@ class BestsellerListviewBook extends StatelessWidget {
                 const Gap(30),
                 SizedBox(
                   width: MediaQuery.of(context).size.width * 0.5,
-                  child: const Column(
+                  child: Column(
                     crossAxisAlignment: .start,
                     children: [
-                      Text(
+                      const Text(
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         'Harry Potter and the Goblet of Fire',
                         style: Styles.bookTitle,
                       ),
-                      Gap(5),
-                      Text('J.K. Rowling', style: Styles.textSmall),
-                      Gap(5),
-                      BookRating(),
+                      const Gap(5),
+                      const Text('J.K. Rowling', style: Styles.textSmall),
+                      const Gap(5),
+                      Expanded(
+                        child: Row(
+                          children: [
+                            Text(
+                              '19.99 €',
+                              style: Styles.textSmall.copyWith(
+                                fontWeight: .bold,
+                              ),
+                            ),
+                            const Spacer(),
+                            const BookRating(),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),
