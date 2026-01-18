@@ -7,19 +7,27 @@ class CustomBookDetailsAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 30, right: 25, bottom: 20),
+      padding: const EdgeInsets.only(left: 30, right: 25, bottom: 18),
       child: Row(
         children: [
           IconButton(
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: const Icon(FontAwesomeIcons.xmark, size: 25),
+            icon: const Icon(
+              FontAwesomeIcons.xmark,
+              size: 25,
+              color: Colors.white,
+            ),
           ),
           const Spacer(),
           IconButton(
             onPressed: () {},
-            icon: const Icon(FontAwesomeIcons.cartShopping, size: 25),
+            icon: const Icon(
+              FontAwesomeIcons.cartShopping,
+              size: 25,
+              color: Colors.white,
+            ),
           ),
         ],
       ),
