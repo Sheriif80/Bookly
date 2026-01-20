@@ -28,7 +28,6 @@ class BestsellerListviewBook extends StatelessWidget {
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: .circular(10),
-                      color: Colors.amber,
                       image: const DecorationImage(
                         fit: BoxFit.fill,
                         image: AssetImage(AssetsData.testBook3),
