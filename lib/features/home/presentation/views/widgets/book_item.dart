@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class BookItem extends StatelessWidget {
@@ -9,15 +10,14 @@ class BookItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10),
-      child: AspectRatio(
-        aspectRatio: 0.66,
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: .circular(16),
-            image: DecorationImage(
-              fit: BoxFit.fill,
-              image: NetworkImage(imageURL),
-            ),
+      child: ClipRRect(
+        borderRadius: .circular(16),
+        child: AspectRatio(
+          aspectRatio: 0.66,
+          child: CachedNetworkImage(
+            fit: BoxFit.fill,
+            errorWidget: (context, url, error) => const Icon(Icons.error),
+            imageUrl: imageURL,
           ),
         ),
       ),
