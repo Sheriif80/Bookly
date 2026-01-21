@@ -27,7 +27,7 @@ class HomeViewBody extends StatelessWidget {
                   ),
                 ),
                 SliverToBoxAdapter(child: Gap(20)),
-                BestsellerListviewBuilder(),
+                SliverToBoxAdapter(child: BestsellerListviewBuilder()),
               ],
             ),
           ),
