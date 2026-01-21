@@ -46,7 +46,12 @@ class VolumeInfo extends Equatable {
 
   factory VolumeInfo.fromJson(Map<String, dynamic> json) => VolumeInfo(
     title: json['title'] as String?,
-    authors: json['authors'] as List<String>?,
+
+    // 1. FIXED AUTHORS PARSING
+    authors: (json['authors'] as List<dynamic>?)
+        ?.map((e) => e.toString())
+        .toList(),
+
     publishedDate: json['publishedDate'] as String?,
     industryIdentifiers: (json['industryIdentifiers'] as List<dynamic>?)
         ?.map((e) => IndustryIdentifier.fromJson(e as Map<String, dynamic>))
@@ -56,7 +61,12 @@ class VolumeInfo extends Equatable {
         : ReadingModes.fromJson(json['readingModes'] as Map<String, dynamic>),
     pageCount: json['pageCount'] as int?,
     printType: json['printType'] as String?,
-    categories: json['categories'] as List<String>?,
+
+    // 2. FIXED CATEGORIES PARSING
+    categories: (json['categories'] as List<dynamic>?)
+        ?.map((e) => e.toString())
+        .toList(),
+
     maturityRating: json['maturityRating'] as String?,
     allowAnonLogging: json['allowAnonLogging'] as bool?,
     contentVersion: json['contentVersion'] as String?,
