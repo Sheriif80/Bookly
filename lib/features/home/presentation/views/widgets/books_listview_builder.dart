@@ -18,9 +18,11 @@ class BooksListviewBuilder extends StatelessWidget {
             child: ListView.builder(
               physics: const BouncingScrollPhysics(),
               scrollDirection: .horizontal,
-              itemCount: 5,
+              itemCount: state.books.length,
               itemBuilder: (context, index) {
-                return const BookItem();
+                return BookItem(
+                  imageURL: state.books[index].volumeInfo.imageLinks.thumbnail,
+                );
               },
             ),
           );
