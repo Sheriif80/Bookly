@@ -4,7 +4,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 
 class BookRating extends StatelessWidget {
-  const BookRating({super.key});
+  const BookRating({super.key, required this.count});
+  final int count;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class BookRating extends StatelessWidget {
         const Text('4.8', style: Styles.textMedium),
         const Gap(7),
 
-        Text('(2390)', style: Styles.caption),
+        Text('(${count.toString()})', style: Styles.caption),
       ],
     );
   }

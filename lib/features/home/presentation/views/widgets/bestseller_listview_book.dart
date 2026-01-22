@@ -1,13 +1,17 @@
 import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/core/utils/assets_data.dart';
 import 'package:bookly/core/utils/styles.dart';
+import 'package:bookly/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_rating.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 
 class BestsellerListviewBook extends StatelessWidget {
-  const BestsellerListviewBook({super.key});
+  const BestsellerListviewBook({super.key, required this.bookModel});
+
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -23,15 +27,15 @@ class BestsellerListviewBook extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Row(
               children: [
-                AspectRatio(
-                  aspectRatio: 0.66,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: .circular(10),
-                      image: const DecorationImage(
-                        fit: BoxFit.fill,
-                        image: AssetImage(AssetsData.testBook3),
-                      ),
+                ClipRRect(
+                  borderRadius: .circular(10),
+                  child: AspectRatio(
+                    aspectRatio: 0.66,
+                    child: CachedNetworkImage(
+                      fit: .fill,
+                      errorWidget: (context, url, error) =>
+                          const Icon(Icons.error),
+                      imageUrl: bookModel.volumeInfo.imageLinks.thumbnail,
                     ),
                   ),
                 ),
@@ -41,26 +45,33 @@ class BestsellerListviewBook extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: .start,
                     children: [
-                      const Text(
+                      Text(
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
-                        'Harry Potter and the Goblet of Fire',
+                        bookModel.volumeInfo.title!,
                         style: Styles.bookTitle,
                       ),
                       const Gap(5),
-                      const Text('J.K. Rowling', style: Styles.textSmall),
+                      Text(
+                        bookModel.volumeInfo.authors?.isNotEmpty == true
+                            ? bookModel.volumeInfo.authors![0]
+                            : 'Unknown Author',
+                        style: Styles.textSmall,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
                       const Gap(5),
                       Expanded(
                         child: Row(
                           children: [
                             Text(
-                              '19.99 €',
+                              'FREE',
                               style: Styles.textSmall.copyWith(
                                 fontWeight: .bold,
                               ),
                             ),
                             const Spacer(),
-                            const BookRating(),
+                            BookRating(count: bookModel.volumeInfo.pageCount!),
                           ],
                         ),
                       ),

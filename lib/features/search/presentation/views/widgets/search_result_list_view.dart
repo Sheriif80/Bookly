@@ -10,7 +10,7 @@ class SerachResultListView extends StatelessWidget {
       delegate: SliverChildBuilderDelegate((context, index) {
         return const Padding(
           padding: EdgeInsets.symmetric(vertical: 10), // Add spacing here
-          child: BestsellerListviewBook(),
+          child: SizedBox(), // BestsellerListviewBook(),
         );
       }, childCount: 10),
     );

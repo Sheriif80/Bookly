@@ -19,9 +19,11 @@ class BestsellerListviewBuilder extends StatelessWidget {
             physics: const NeverScrollableScrollPhysics(),
 
             itemBuilder: (BuildContext context, int index) {
-              return const Padding(
-                padding: EdgeInsets.symmetric(vertical: 10), // Add spacing here
-                child: BestsellerListviewBook(),
+              return Padding(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 10,
+                ), // Add spacing here
+                child: BestsellerListviewBook(bookModel: state.books[index]),
               );
             },
           );
