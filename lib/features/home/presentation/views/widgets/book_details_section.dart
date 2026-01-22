@@ -45,7 +45,7 @@ class BookDetailsSection extends StatelessWidget {
           children: [BookRating(count: bookModel.volumeInfo.pageCount!)],
         ),
         const Gap(38),
-        const BookActions(),
+        BookActions(bookModel: bookModel),
       ],
     );
   }

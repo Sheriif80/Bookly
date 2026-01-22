@@ -24,7 +24,7 @@ class CustomBookDetailsAppBar extends StatelessWidget {
           IconButton(
             onPressed: () {},
             icon: const Icon(
-              FontAwesomeIcons.cartShopping,
+              FontAwesomeIcons.bookmark,
               size: 25,
               color: Colors.white,
             ),
