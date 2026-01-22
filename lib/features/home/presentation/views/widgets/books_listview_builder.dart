@@ -1,8 +1,10 @@
+import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/core/widgets/custom_error_widget.dart';
 import 'package:bookly/features/home/presentation/manager/featured%20books%20cubit/featured_books_cubit.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class BooksListviewBuilder extends StatelessWidget {
   const BooksListviewBuilder({super.key});
@@ -20,8 +22,17 @@ class BooksListviewBuilder extends StatelessWidget {
               scrollDirection: .horizontal,
               itemCount: state.books.length,
               itemBuilder: (context, index) {
-                return BookItem(
-                  imageURL: state.books[index].volumeInfo.imageLinks.thumbnail,
+                return GestureDetector(
+                  onTap: () {
+                    GoRouter.of(context).push(
+                      AppRouter.bookDetailsView,
+                      extra: state.books[index],
+                    );
+                  },
+                  child: BookItem(
+                    imageURL:
+                        state.books[index].volumeInfo.imageLinks.thumbnail,
+                  ),
                 );
               },
             ),

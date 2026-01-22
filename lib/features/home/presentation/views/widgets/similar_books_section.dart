@@ -20,6 +20,7 @@ class SimilarBooksSection extends StatelessWidget {
         ),
         const Gap(17),
         const SimilarBookListView(),
+        const Gap(40),
       ],
     );
   }

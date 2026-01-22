@@ -59,7 +59,7 @@ class HomeRepoImplementaion extends HomeRepo {
     try {
       final data = await apiService.get(
         endPoint:
-            'volumes?filter=free-ebooks&orderBy=relevance&q=subject: mathematics',
+            'volumes?filter=free-ebooks&orderBy=relevance&q=subject: $category',
       );
       final List<BookModel> books = [];
 
