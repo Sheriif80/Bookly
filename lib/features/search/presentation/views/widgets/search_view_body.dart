@@ -20,7 +20,7 @@ class SearchViewBody extends StatelessWidget {
               child: Text('Search Result', style: Styles.textLarge),
             ),
 
-            SerachResultListView(),
+            SliverToBoxAdapter(child: SerachResultListView()),
           ],
         ),
       ),
